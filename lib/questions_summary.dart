@@ -26,9 +26,12 @@ class QuestionsSummary extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CircleAvatar(
-                    backgroundColor: questionIndexColor,
-                    child:
-                        Text(((data["question_index"] as int) + 1).toString())),
+                  backgroundColor: questionIndexColor,
+                  child: Text(((data["question_index"] as int) + 1).toString()),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,10 +44,9 @@ class QuestionsSummary extends StatelessWidget {
                         data['user_answer'] as String,
                         style: TextStyle(color: userAnswerColor),
                       ),
-                      Text(
-                        data['correct_answer'] as String,
-                        style: TextStyle(color: correctAnswerColor)
-                      )
+                      Text(data['correct_answer'] as String,
+                          style: TextStyle(color: correctAnswerColor)),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 )
