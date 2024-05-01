@@ -1,3 +1,4 @@
+import 'package:adv_basics/fonts.dart';
 import 'package:flutter/material.dart';
 
 class QuestionsSummary extends StatelessWidget {
@@ -18,7 +19,7 @@ class QuestionsSummary extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      Text(data['question'] as String),
+                      Text(data['question'] as String, style: heading2),
                       const SizedBox(
                         height: 5,
                       ),

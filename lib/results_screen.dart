@@ -1,4 +1,5 @@
 import 'package:adv_basics/data/questions.dart';
+import 'package:adv_basics/fonts.dart';
 import 'package:adv_basics/questions_summary.dart';
 import 'package:flutter/material.dart';
 
@@ -32,16 +33,7 @@ class ResultsScreen extends StatelessWidget {
     final numCorrectQuestions = summaryData.where((data) {
       return data["user_answer"] == data["correct_answer"];
     }).length;
-    
-    /* TODO: 
-    1. Change font of questions to match results Page
-    2. Change color of all questions and restart quiz to white
-    2. Highlight correct answers
-    3. Put each number in circles
-    4. Add margin between each question
-    5. Add an icon to the restart quiz button
-    */
-    
+
     return SizedBox(
       width: double.infinity,
       child: Container(
@@ -49,11 +41,15 @@ class ResultsScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('You answered  $numCorrectQuestions out of $numTotalQuestions questions correctly!'),
-            const SizedBox(
-              height: 30, 
+            Text(
+              'You answered  $numCorrectQuestions out of $numTotalQuestions questions correctly!',
+              style: heading1,
+              textAlign: TextAlign.center,
             ),
-            QuestionsSummary(summaryData),  
+            const SizedBox(
+              height: 30,
+            ),
+            QuestionsSummary(summaryData),
             const SizedBox(
               height: 30,
             ),
