@@ -1,15 +1,19 @@
 import 'package:adv_basics/data/questions.dart';
 import 'package:adv_basics/fonts.dart';
 import 'package:adv_basics/questions_summary.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
     super.key,
     required this.chosenAnswers,
+    required this.restartQuiz,
   });
 
   final List<String> chosenAnswers;
+  final void Function() restartQuiz;
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
@@ -53,7 +57,14 @@ class ResultsScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            TextButton(onPressed: () {}, child: const Text('Restart Quiz!')),
+            TextButton.icon(
+                onPressed: restartQuiz,
+                icon: const Icon(
+                  CupertinoIcons.arrow_clockwise,
+                  color: white,
+                ),
+                label: const Text('Restart Quiz!',
+                    style: TextStyle(color: white))),
           ],
         ),
       ),
