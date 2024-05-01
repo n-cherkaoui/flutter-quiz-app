@@ -1,6 +1,6 @@
 import 'package:adv_basics/data/questions.dart';
 import 'package:adv_basics/fonts.dart';
-import 'package:adv_basics/questions_summary.dart';
+import 'package:adv_basics/questions_summary/questions_summary.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
